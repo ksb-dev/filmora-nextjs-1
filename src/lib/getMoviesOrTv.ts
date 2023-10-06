@@ -18,8 +18,10 @@ export async function getMoviesOrTv(
 
   let url;
 
-  if (category === "trending") {
-    url = `${baseUrl}/${category}/${mediaType}/day?api_key=${apiKey}&language=${language}&page=${page}`;
+  if (category === "now_playing" && mediaType === "tv") {
+    url = `${baseUrl}/${mediaType}/on_the_air?api_key=${apiKey}&language=${language}&page=${page}`;
+  } else if (category === "upcoming" && mediaType === "tv") {
+    url = `${baseUrl}/${mediaType}/airing_today?api_key=${apiKey}&language=${language}&page=${page}`;
   } else {
     url = `${baseUrl}/${mediaType}/${category}?api_key=${apiKey}&language=${language}&page=${page}`;
   }

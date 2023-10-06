@@ -15,7 +15,7 @@
 .carousel,
 .carousel_inner {
   position: relative;
-  height: 28rem;
+  height: 32rem;
   color: #fff;
   border-bottom-left-radius: var(--border-radius-1);
   border-bottom-right-radius: var(--border-radius-1);
@@ -28,7 +28,7 @@
   position: absolute;
   max-width: 1280px;
   width: 100%;
-  height: 28rem;
+  height: 32rem;
   top: 0;
   right: 0;
   border-bottom-left-radius: var(--border-radius-1);
@@ -38,7 +38,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 28rem;
+  height: 32rem;
   max-width: 1280px;
   width: 100%;
   background: linear-gradient(
@@ -66,7 +66,7 @@
   -webkit-text-fill-color: transparent; */
   color: var(--c1);
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   max-width: 750px;
   width: fit-content;
@@ -99,12 +99,13 @@
   transform: translate(-47.5%, -40%);
 }
 .image_index {
+  font-weight: 500;
   position: absolute;
   top: 2rem;
   right: 2rem;
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
-  border-radius: var(--border-radius-1);
+  border-radius: 50px;
 }

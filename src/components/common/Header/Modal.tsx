@@ -24,22 +24,18 @@ export default forwardRef<Ref, Props>(function Modal(props, ref): JSX.Element {
       >
         Popular
       </Link>
-      {props.media_type === "movie" && (
-        <>
-          <Link
-            href={`/pages/${props.media_type}/now_playing/1`}
-            onClick={props.hideModal}
-          >
-            Now Playing
-          </Link>
-          <Link
-            href={`/pages/${props.media_type}/upcoming/1`}
-            onClick={props.hideModal}
-          >
-            Upcoming
-          </Link>
-        </>
-      )}
+      <Link
+        href={`/pages/${props.media_type}/now_playing/1`}
+        onClick={props.hideModal}
+      >
+        {props.media_type === "movie" ? "Now Playing" : "On The Air"}
+      </Link>
+      <Link
+        href={`/pages/${props.media_type}/upcoming/1`}
+        onClick={props.hideModal}
+      >
+        {props.media_type === "movie" ? "Upcoming" : "Airing Today"}
+      </Link>
       <Link
         href={`/pages/${props.media_type}/top_rated/1`}
         onClick={props.hideModal}

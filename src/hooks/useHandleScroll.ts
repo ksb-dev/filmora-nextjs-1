@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, RefObject } from "react";
 
 export const useHandleScroll = (
@@ -11,13 +13,13 @@ export const useHandleScroll = (
       let currentScrollpos = window.scrollY;
 
       if (position > currentScrollpos) {
-        headerRef.current!.style.top = "0";
+        headerRef.current!.style.transform = "translateY(0%)";
         setTimeout(() => {
           headerInnerRef.current!.style.transform = "translateY(0%)";
         }, 300);
       } else {
         headerInnerRef.current!.style.transform = "translateY(-150%)";
-        headerRef.current!.style.top = "-100%";
+        headerRef.current!.style.transform = "translateY(-150%)";
       }
       setPosition(currentScrollpos);
     };

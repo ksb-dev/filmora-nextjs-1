@@ -12,7 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: top 0.3s ease;
+  transform: translateY(0%);
+  transition: transform 0.5s ease;
 }
 .header_inner {
   max-width: 1280px;
@@ -27,19 +28,24 @@
   display: flex;
   align-items: center;
 }
-.movie_option {
-  margin-right: 2rem;
-}
 .movie_option,
 .tv_option {
   position: relative;
   cursor: pointer;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+.people_option {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
 }
 .movie_option span,
 .tv_option span {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  margin-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .modal {
   position: absolute;

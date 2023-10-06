@@ -21,9 +21,9 @@ const TvShowsOption: React.FC = () => {
 
   const hideModal = () => {
     modalRef.current!.style.opacity = "0";
+    modalRef.current!.style.transform = "scale(0.9)";
     setTimeout(() => {
       modalRef.current!.style.display = "none";
-      modalRef.current!.style.transform = "scale(0.9)";
     }, 100);
   };
 

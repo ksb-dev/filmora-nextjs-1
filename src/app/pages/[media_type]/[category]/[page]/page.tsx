@@ -65,15 +65,18 @@ export default async function Home({ params }: Params) {
   const { media_type, category, page } = params;
 
   let title = "";
-  // category === "top_rated"
-  //   ? (title = "Top Rated")
-  //   : (title = category.charAt(0).toUpperCase() + category.substring(1));
 
-  category === "top_rated"
-    ? (title = "Top Rated")
-    : category === "now_playing"
-    ? (title = "Now Playing")
-    : (title = category.charAt(0).toUpperCase() + category.substring(1));
+  if (category === "now_playing" && media_type === "movie") {
+    title = "Now Playing";
+  } else if (category === "now_playing" && media_type === "tv") {
+    title = "Currently Airing TV Shows";
+  } else if (category === "upcoming" && media_type === "tv") {
+    title = "TV Shows Airing Today";
+  } else if (category === "top_rated") {
+    title = "Top Rated";
+  } else {
+    title = category.charAt(0).toUpperCase() + category.substring(1);
+  }
 
   const data = await getMoviesOrTv(category, page, media_type, title);
 
@@ -84,7 +87,12 @@ export default async function Home({ params }: Params) {
 
         <div className={styles.category_list}>
           <p className={styles.category_text}>
-            {title} {media_type === "movie" ? "Movies" : "Tv Shows"}
+            {title}{" "}
+            {media_type === "movie"
+              ? "Movies"
+              : title !== "TV Shows Airing Today" &&
+                title !== "Currently Airing TV Shows" &&
+                "Tv Shows"}
           </p>
           <div className={styles.media_list}>
             {data!.results.map((info: MediaCard) => (
