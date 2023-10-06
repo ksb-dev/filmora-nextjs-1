@@ -1,0 +1,30 @@
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 8rem auto 2rem auto;
+}
+.inner_container {
+  margin: 4rem auto 4rem auto;
+  width: 100%;
+  min-height: 1000px;
+  display: flex;
+}
+.category_list {
+  width: calc(100% - 250px);
+}
+.category_text {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.nav {
+  width: 250px;
+}
+.media_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  align-items: stretch;
+  gap: 4rem 2rem;
+}

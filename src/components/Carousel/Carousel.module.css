@@ -1,0 +1,87 @@
+.carousel {
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(243, 206, 19, 0.25)
+  );
+  border-bottom-left-radius: var(--border-radius-1);
+  border-bottom-right-radius: var(--border-radius-1);
+}
+.carousel,
+.carousel_inner {
+  position: relative;
+  height: 28rem;
+  color: #fff;
+  border-bottom-left-radius: var(--border-radius-1);
+  border-bottom-right-radius: var(--border-radius-1);
+}
+.carousel_inner {
+  opacity: 0.25;
+  transition: opacity 1s ease-out;
+}
+.carousel_image {
+  position: absolute;
+  max-width: 1280px;
+  width: 100%;
+  height: 28rem;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: var(--border-radius-1);
+  border-bottom-right-radius: var(--border-radius-1);
+}
+.carousel_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28rem;
+  max-width: 1280px;
+  width: 100%;
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(243, 206, 19, 0.25)
+  );
+  border-bottom-left-radius: var(--border-radius-1);
+  border-bottom-right-radius: var(--border-radius-1);
+}
+.carousel_text {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+}
+.play_button {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  background: var(--c1);
+  color: var(--c2);
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.play_icon,
+.pause_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
+}
+.play_icon {
+  transform: translate(-42.5%, -40%);
+}
+.pause_icon {
+  transform: translate(-47.5%, -40%);
+}
+.image_index {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+}

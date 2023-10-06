@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800;900&family=Prompt:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Prompt:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --c1: #90cea1;
+  --c1: #01b4e4;
+  --c2: #0d253f;
+  --c1: #f3ce13;
+  --c2: #000;
+
+  --border-radius-1: 3px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Kanit", sans-serif;
+  /* font-family: "Outfit", sans-serif; */
+  letter-spacing: 1px;
+}
