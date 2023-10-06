@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (params.category === "top_rated")
     return {
       title: `Filmora | Top Rated  ${
-        params.media_type === "movie" ? "Movies" : "Shows"
+        params.media_type === "movie" ? "Movies" : " Tv Shows"
       }`,
     };
 
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   return {
     title: `Filmora | ${category} ${
-      params.media_type === "movie" ? "Movies" : "Shows"
+      params.media_type === "movie" ? "Movies" : "Tv Shows"
     }`,
   };
 }
@@ -84,7 +84,7 @@ export default async function Home({ params }: Params) {
 
         <div className={styles.category_list}>
           <p className={styles.category_text}>
-            {title} {media_type === "movie" ? "Movies" : "Shows"}
+            {title} {media_type === "movie" ? "Movies" : "Tv Shows"}
           </p>
           <div className={styles.media_list}>
             {data!.results.map((info: MediaCard) => (

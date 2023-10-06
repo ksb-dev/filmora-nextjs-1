@@ -5,7 +5,7 @@
 }
 .trending_text {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-right: 1rem;
 }
 .trending_options {
@@ -16,17 +16,19 @@
   border-radius: 50px;
 }
 .trending_options span {
-  font-weight: 500;
   color: var(--c1);
+  color: #fff;
   display: inline-block;
   width: 80px;
   text-align: center;
   padding: 0.25rem 0;
 }
 .trending_options span:last-child {
-  position: absolute;
   background: var(--c1);
+  /* background: linear-gradient(to right bottom, #90cea1 25%, #01b4e4); */
   color: var(--c2);
+  font-weight: 500;
+  position: absolute;
   transform: translateX(-199%);
   transition: transform 0.3s ease;
   border-radius: 50px;

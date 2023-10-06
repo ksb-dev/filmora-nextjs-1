@@ -15,11 +15,13 @@ const MoviesOption: React.FC = () => {
     modalRef.current!.style.display = "flex";
     setTimeout(() => {
       modalRef.current!.style.opacity = "1";
+      modalRef.current!.style.transform = "scale(1)";
     }, 100);
   };
 
   const hideModal = () => {
     modalRef.current!.style.opacity = "0";
+    modalRef.current!.style.transform = "scale(0.9)";
     setTimeout(() => {
       modalRef.current!.style.display = "none";
     }, 100);

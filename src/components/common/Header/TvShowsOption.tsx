@@ -15,6 +15,7 @@ const TvShowsOption: React.FC = () => {
     modalRef.current!.style.display = "flex";
     setTimeout(() => {
       modalRef.current!.style.opacity = "1";
+      modalRef.current!.style.transform = "scale(1)";
     }, 100);
   };
 
@@ -22,6 +23,7 @@ const TvShowsOption: React.FC = () => {
     modalRef.current!.style.opacity = "0";
     setTimeout(() => {
       modalRef.current!.style.display = "none";
+      modalRef.current!.style.transform = "scale(0.9)";
     }, 100);
   };
 

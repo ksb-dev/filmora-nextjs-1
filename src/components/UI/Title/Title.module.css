@@ -1,16 +1,20 @@
 .title {
   background: var(--c1);
   color: var(--c2);
+  padding: 0.25rem 0.5rem;
   font-size: 1.25rem;
-  font-weight: 900;
+  font-weight: 700;
   display: flex;
   align-items: center;
-  border-radius: 0;
-  padding: 0.25rem 0.5rem;
   text-decoration: none;
   border-radius: var(--border-radius-1);
   margin-right: 2rem;
   letter-spacing: 1px;
+
+  /* background: linear-gradient(to right, #90cea1, #01b4e4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
 .span {
   display: inline-block;
