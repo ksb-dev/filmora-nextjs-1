@@ -30,6 +30,6 @@
   font-weight: 500;
   position: absolute;
   transform: translateX(-199%);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   border-radius: 50px;
 }

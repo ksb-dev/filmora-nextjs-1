@@ -44,7 +44,9 @@ const MediaCard: React.FC<Props> = ({ mediaInfo, mediaType }): JSX.Element => {
               ? title.length < 30
                 ? title
                 : title.substring(0, 30) + " ..."
-              : name}
+              : name!.length < 30
+              ? name
+              : name!.substring(0, 30) + " ..."}
           </span>
           <span className={styles.date}>
             {release_date && moment(release_date).format("Do MMM, YYYY")}
