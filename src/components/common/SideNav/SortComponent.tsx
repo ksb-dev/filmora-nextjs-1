@@ -15,16 +15,16 @@ const SortComponent = () => {
   const [showSortModal, setShowSortModal] = useState<boolean>(false);
   const [sortType, setSortType] = useState<string>("Popularity Descending");
   const [showSortOptions, setShowSortOptions] = useState<boolean>(false);
-  const [path, setPath] = useState<string>("");
+  const [mediaType, setMediaType] = useState<string>("");
+  const [category, setCategory] = useState<string>("");
   const arrowRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    let path = window.location.pathname.substring(
-      0,
-      window.location.pathname.length - 1
-    );
-    setPath(path);
-    console.log(path);
+    setMediaType("");
+    setCategory("");
+    let url = window.location.pathname.split("/");
+    setMediaType(url[2]);
+    setCategory(url[3]);
   }, []);
 
   useEffect(() => {
@@ -64,20 +64,26 @@ const SortComponent = () => {
             </div>
             {showSortOptions && (
               <div className={styles.sort_type_options_div}>
-                <Link href={`${path}/sort/popularity.desc/1`}>
+                <Link
+                  href={`/pages/${mediaType}/${category}/sort/popularity.desc/1`}
+                >
                   Popularity Descending
                 </Link>
-                <Link href={`${path}/sort/popularity.asc/1`}>
+                <Link
+                  href={`/pages/${mediaType}/${category}/sort/popularity.asc/1`}
+                >
                   Popularity Ascending
                 </Link>
-                <Link href={`${path}/sort/vote_average.desc/1`}>
+                <Link
+                  href={`/pages/${mediaType}/${category}/sort/vote_average.desc/1`}
+                >
                   Rating Descending
                 </Link>
-                <Link href={`${path}/sort/vote_average.asc/1`}>
+                <Link
+                  href={`/pages/${mediaType}/${category}/sort/vote_average.asc/1`}
+                >
                   Rating Ascending
                 </Link>
-                {/* <Link href={`${path}/sort/popularity.desc/1`}>Title (A - Z)</Link>
-                <Link href={`${path}/sort/popularity.desc/1`}>Title (Z - A)</Link> */}
               </div>
             )}
           </div>
