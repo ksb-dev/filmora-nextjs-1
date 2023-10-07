@@ -20,9 +20,6 @@ interface Params {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  // let type =
-  //   params.media_type.charAt(0).toUpperCase() + params.media_type.substring(1);
-
   if (params.category === "top_rated")
     return {
       title: `Filmora | Top Rated  ${
@@ -43,6 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 export default async function Page({ params }: Params) {
   const { media_type, category, page } = params;
 
+  // Assign Title
   let title = "";
 
   if (category === "now_playing" && media_type === "movie") {
@@ -57,6 +55,7 @@ export default async function Page({ params }: Params) {
     title = category.charAt(0).toUpperCase() + category.substring(1);
   }
 
+  // Fetch Data
   const data = await getMoviesOrTv(category, page, media_type, title);
 
   return (

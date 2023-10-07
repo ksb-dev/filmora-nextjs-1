@@ -9,7 +9,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import styles from "./SideNav.module.css";
 
 const GenreComponent = () => {
-  const [showGenreModal, setShowGenreModal] = useState<boolean>(false);
+  const [showGenreModal, setShowGenreModal] = useState<boolean>(true);
   const arrowRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {

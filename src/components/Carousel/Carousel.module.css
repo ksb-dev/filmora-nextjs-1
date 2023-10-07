@@ -4,11 +4,11 @@
     rgba(0, 0, 0, 1) 20%,
     rgba(243, 206, 19, 0.25)
   );
-  /* background: linear-gradient(
-    to right top,
+  background: linear-gradient(
+    to right,
     rgba(13, 37, 63, 1),
     rgba(1, 180, 228, 0.25)
-  ); */
+  );
   border-bottom-left-radius: var(--border-radius-1);
   border-bottom-right-radius: var(--border-radius-1);
 }
@@ -46,11 +46,11 @@
     rgba(0, 0, 0, 1) 20%,
     rgba(243, 206, 19, 0.25)
   );
-  /* background: linear-gradient(
-    to right top,
+  background: linear-gradient(
+    to right,
     rgba(13, 37, 63, 1),
-    rgba(1, 180, 228, 0.25)
-  ); */
+    rgba(1, 180, 228, 0.5)
+  );
   border-bottom-left-radius: var(--border-radius-1);
   border-bottom-right-radius: var(--border-radius-1);
 }
@@ -60,24 +60,27 @@
   bottom: 2rem;
 }
 .carousel_text p:first-child {
-  /* background: linear-gradient(to right bottom, #90cea1 25%, #01b4e4);
+  background: linear-gradient(to right bottom, #90cea1 25%, #01b4e4);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  color: var(--c1);
+  -webkit-text-fill-color: transparent;
+
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   max-width: 750px;
   width: fit-content;
 }
+.carousel_text p:last-child {
+  font-size: 1.1rem;
+}
 .play_button {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
-  /* background: linear-gradient(to right bottom, #90cea1 25%, #01b4e4); */
-  background: var(--c1);
-  color: var(--c2);
+  background: linear-gradient(to right bottom, #90cea1 25%, #01b4e4);
+  background: #fff;
+  color: var(--c3);
   border-radius: 50px;
   height: 50px;
   width: 50px;
@@ -104,8 +107,9 @@
   top: 6rem;
   right: 2rem;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--c3);
   padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
   border-radius: 50px;
+  display: none;
 }

@@ -45,7 +45,7 @@
   justify-content: space-between;
   background: rgb(245, 245, 245);
   border-radius: var(--border-radius-1);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 .sort_type_text {
@@ -62,7 +62,7 @@
 .sort_type_options_div a {
   text-decoration: none;
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   font-size: 0.9rem;
   cursor: pointer;
   background: #fff;
@@ -70,5 +70,5 @@
   color: #555;
 }
 .sort_type_options_div a:hover {
-  filter: brightness(90%);
+  filter: brightness(95%);
 }

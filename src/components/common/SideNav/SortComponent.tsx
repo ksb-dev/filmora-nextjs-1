@@ -12,7 +12,7 @@ import { AiFillCaretDown } from "react-icons/ai";
 import styles from "./SideNav.module.css";
 
 const SortComponent = () => {
-  const [showSortModal, setShowSortModal] = useState<boolean>(false);
+  const [showSortModal, setShowSortModal] = useState<boolean>(true);
   const [sortType, setSortType] = useState<string>("Popularity Descending");
   const [showSortOptions, setShowSortOptions] = useState<boolean>(false);
   const [mediaType, setMediaType] = useState<string>("");

@@ -1,8 +1,5 @@
 .title {
-  background: var(--c1);
-  color: var(--c2);
-  padding: 0.15rem 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -10,10 +7,10 @@
   border-radius: var(--border-radius-1);
   margin-right: 2rem;
 
-  /* background: linear-gradient(to right, #90cea1, #01b4e4);
+  background: linear-gradient(to right, #90cea1, #01b4e4);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
 }
 .span {
   display: inline-block;
@@ -24,5 +21,4 @@
   border-radius: 50px;
   background: linear-gradient(to right, #01b4e4, #90cea1);
   background: #01b4e4;
-  display: none;
 }

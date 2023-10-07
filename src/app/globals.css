@@ -3,9 +3,10 @@
 
 :root {
   --c1: #90cea1;
-  --c2: #0d253f;
-  --c1: #f3ce13;
-  --c2: #000;
+  --c2: #01b4e4;
+  --c3: #0d253f;
+  /* --c1: #f3ce13;
+  --c2: #000; */
 
   --border-radius-1: 7.5px;
 }
@@ -16,6 +17,6 @@
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* font-family: "Kanit", sans-serif; */
-  /* font-family: "Outfit", sans-serif; */
+  /* font-family: "Kanit", sans-serif;
+  font-family: "Outfit", sans-serif; */
 }

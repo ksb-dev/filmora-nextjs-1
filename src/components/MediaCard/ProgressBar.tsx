@@ -5,16 +5,6 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import styles from "./MediaCard.module.css";
 
 const ProgressBar: React.FC<{ vote_average: number }> = ({ vote_average }) => {
-  const getClassBg = (vote: any) => {
-    if (vote >= 7.5) {
-      return "greenBg";
-    } else if (vote >= 5) {
-      return "orangeBg";
-    } else {
-      return "redBg";
-    }
-  };
-
   return (
     <div className={styles.vote}>
       <CircularProgressbar
@@ -26,7 +16,7 @@ const ProgressBar: React.FC<{ vote_average: number }> = ({ vote_average }) => {
               ? "tomato"
               : vote_average >= 7.5
               ? "#1FAC66"
-              : "var(--c1)",
+              : "gold",
         })}
       />
       <span className={styles.vote_text}>
