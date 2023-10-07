@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // react icons
 import { IoIosArrowForward } from "react-icons/io";
@@ -17,15 +18,18 @@ const SortComponent = () => {
   const [showSortOptions, setShowSortOptions] = useState<boolean>(false);
   const [mediaType, setMediaType] = useState<string>("");
   const [category, setCategory] = useState<string>("");
+
   const arrowRef = useRef<HTMLSpanElement>(null);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     setMediaType("");
     setCategory("");
-    let url = window.location.pathname.split("/");
+    let url = pathname.split("/");
     setMediaType(url[2]);
     setCategory(url[3]);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (showSortModal) {

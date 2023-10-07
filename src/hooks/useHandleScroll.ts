@@ -6,7 +6,7 @@ export const useHandleScroll = (
   headerRef: RefObject<HTMLDivElement>,
   headerInnerRef: RefObject<HTMLDivElement>
 ): void => {
-  let [position, setPosition] = useState<number>(window.scrollY);
+  let [position, setPosition] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +24,10 @@ export const useHandleScroll = (
       setPosition(currentScrollpos);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
     };
-  }, [position]);
+  }, [position, headerRef, headerInnerRef]);
 };

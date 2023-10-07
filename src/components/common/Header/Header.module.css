@@ -33,7 +33,7 @@
   position: relative;
   cursor: pointer;
   font-weight: 500;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 .people_option {
   text-decoration: none;
@@ -44,8 +44,14 @@
 .movie_option span,
 .tv_option span {
   display: inline-block;
-  margin-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-1);
+}
+.movie_option span:hover,
+.tv_option span:hover,
+.people_option span:hover {
+  background: #15355a;
+  transition: background 0.1s ease;
 }
 .modal {
   position: absolute;
