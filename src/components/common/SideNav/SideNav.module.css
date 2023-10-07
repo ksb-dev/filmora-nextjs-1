@@ -1,0 +1,66 @@
+.side_nav {
+  width: 250px;
+  margin-right: 2rem;
+  border-radius: var(--border-radius-1);
+  height: fit-content;
+  color: #555;
+}
+.sort_container {
+  width: 250px;
+  position: relative;
+  border-radius: var(--border-radius-1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.title_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 0.5px 0 #cdcdcd;
+  cursor: pointer;
+}
+.sort_text {
+  font-weight: 500;
+}
+.sort_icon {
+  font-weight: 700;
+}
+.options_div {
+  padding: 1rem;
+}
+.options_div_inner {
+  margin-top: 1rem;
+}
+.sort_type_div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(245, 245, 245);
+  border-radius: var(--border-radius-1);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.sort_type_text {
+  font-size: 0.9rem;
+}
+.sort_type_options_div {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  overflow-y: auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-1);
+  height: 150px;
+}
+.sort_type_options_div span {
+  display: inline-block;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: #fff;
+  transition: filter 0.3s ease;
+}
+.sort_type_options_div span:hover {
+  filter: brightness(90%);
+}

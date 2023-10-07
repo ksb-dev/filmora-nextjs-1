@@ -2,30 +2,18 @@
 
 import { useRef } from "react";
 
+// hooks
+import { useToggleMediaOptionModal } from "@/hooks/useToggleMediaOptionModal";
+
 // components
-import Modal from "./Modal";
+import OptionsModal from "./OptionsModal";
 
 // styles
 import styles from "./Header.module.css";
 
 const TvShowsOption: React.FC = () => {
   const modalRef = useRef<HTMLDivElement>(null);
-
-  const showModal = () => {
-    modalRef.current!.style.display = "flex";
-    setTimeout(() => {
-      modalRef.current!.style.opacity = "1";
-      modalRef.current!.style.transform = "scale(1)";
-    }, 100);
-  };
-
-  const hideModal = () => {
-    modalRef.current!.style.opacity = "0";
-    modalRef.current!.style.transform = "scale(0.9)";
-    setTimeout(() => {
-      modalRef.current!.style.display = "none";
-    }, 100);
-  };
+  const { showModal, hideModal } = useToggleMediaOptionModal(modalRef);
 
   return (
     <div
@@ -34,7 +22,7 @@ const TvShowsOption: React.FC = () => {
       onMouseLeave={hideModal}
     >
       <span>Tv Shows</span>
-      <Modal ref={modalRef} media_type={"tv"} hideModal={hideModal} />
+      <OptionsModal ref={modalRef} media_type={"tv"} hideModal={hideModal} />
     </div>
   );
 };

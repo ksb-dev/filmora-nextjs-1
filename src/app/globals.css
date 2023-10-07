@@ -3,7 +3,6 @@
 
 :root {
   --c1: #90cea1;
-  --c1: #01b4e4;
   --c2: #0d253f;
   --c1: #f3ce13;
   --c2: #000;
@@ -17,6 +16,6 @@
 }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* font-family: "Kanit", sans-serif;
-  font-family: "Outfit", sans-serif; */
+  /* font-family: "Kanit", sans-serif; */
+  /* font-family: "Outfit", sans-serif; */
 }

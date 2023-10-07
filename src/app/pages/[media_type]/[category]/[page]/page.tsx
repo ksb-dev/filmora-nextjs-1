@@ -4,33 +4,12 @@ import { Metadata } from "next";
 import { getMoviesOrTv } from "@/lib/getMoviesOrTv";
 
 // components
+import SideNav from "@/components/common/SideNav/SideNav";
 import MediaCard from "@/components/MediaCard/MediaCard";
 // import Pagination from "@/components/Pagination/Pagination";
 
 // styles
 import styles from "./page.module.css";
-
-const genresArray = [
-  { id: 28, name: "action" },
-  { id: 12, name: "adventure" },
-  { id: 16, name: "animation" },
-  { id: 35, name: "comedy" },
-  { id: 80, name: "crime" },
-  { id: 99, name: "documentary" },
-  { id: 18, name: "drama" },
-  { id: 10751, name: "family" },
-  { id: 14, name: "fantasy" },
-  { id: 36, name: "history" },
-  { id: 27, name: "horror" },
-  { id: 10402, name: "music" },
-  { id: 9648, name: "mystery" },
-  { id: 10749, name: "romance" },
-  { id: 878, name: "science_fiction" },
-  { id: 10770, name: "tv_Movie" },
-  { id: 53, name: "thriller" },
-  { id: 10752, name: "war" },
-  { id: 37, name: "western" },
-];
 
 interface Params {
   params: {
@@ -83,7 +62,7 @@ export default async function Home({ params }: Params) {
   return (
     <main className={styles.container}>
       <div className={styles.inner_container}>
-        <div className={styles.nav}>Nav</div>
+        <SideNav />
 
         <div className={styles.category_list}>
           <p className={styles.category_text}>

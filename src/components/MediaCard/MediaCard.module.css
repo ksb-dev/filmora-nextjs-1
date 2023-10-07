@@ -49,7 +49,7 @@
 .title_date_div {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 .title {
   display: inline-block;

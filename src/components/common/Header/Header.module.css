@@ -50,9 +50,8 @@
 .modal {
   position: absolute;
   display: none;
-  transform: scale(0.9);
   opacity: 0;
-  transition: all 0.1s ease;
+  transition: opacity 0.3s ease;
   background: #fff;
   color: #555;
   border-radius: var(--border-radius-1);

@@ -12,7 +12,10 @@ interface Props {
 
 type Ref = HTMLDivElement;
 
-export default forwardRef<Ref, Props>(function Modal(props, ref): JSX.Element {
+export default forwardRef<Ref, Props>(function OptionsModal(
+  props,
+  ref
+): JSX.Element {
   const modalRef = useRef<HTMLDivElement>(null);
   useImperativeHandle(ref, () => modalRef.current as HTMLDivElement);
 
