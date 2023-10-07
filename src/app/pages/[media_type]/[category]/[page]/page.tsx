@@ -9,7 +9,7 @@ import MediaCard from "@/components/MediaCard/MediaCard";
 // import Pagination from "@/components/Pagination/Pagination";
 
 // styles
-import styles from "./page.module.css";
+import styles from "../../../page.module.css";
 
 interface Params {
   params: {
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-export default async function Home({ params }: Params) {
+export default async function Page({ params }: Params) {
   const { media_type, category, page } = params;
 
   let title = "";

@@ -8,10 +8,10 @@ interface Props {
 export async function getMoviesOrTv(
   category: string,
   page: number,
-  type: string,
+  media_type: string,
   title: string
 ): Promise<Props> {
-  const mediaType = type === "movie" ? "movie" : "tv";
+  const mediaType = media_type === "movie" ? "movie" : "tv";
   const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
   const baseUrl = "https://api.themoviedb.org/3";
   const language = "en-US";
@@ -30,7 +30,9 @@ export async function getMoviesOrTv(
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${title} ${type}! ${response.status}`);
+      throw new Error(
+        `Failed to fetch ${title} ${media_type}! ${response.status}`
+      );
     }
 
     const data = await response.json();
