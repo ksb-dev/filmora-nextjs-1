@@ -52,6 +52,10 @@ const getTitle = (category: string, media_type: string) => {
     title = "TV Shows Airing Today";
   } else if (category === "top_rated") {
     title = "Top Rated";
+  } else if (category === "sciene_fiction") {
+    title = "Science Fiction";
+  } else if (category === "tv_movie") {
+    title = "TV";
   } else {
     title = category.charAt(0).toUpperCase() + category.substring(1);
   }
