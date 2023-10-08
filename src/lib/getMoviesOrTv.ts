@@ -1,3 +1,5 @@
+import moment from "moment";
+
 interface Props {
   page: number;
   results: MediaCard[];
@@ -13,26 +15,33 @@ export async function getMoviesOrTv(
 ): Promise<Props> {
   const mediaType = media_type === "movie" ? "movie" : "tv";
   const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-  const baseUrl = "https://api.themoviedb.org/3";
+  const baseUrl = "https://api.themoviedb.org/3/discover";
   const language = "en-US";
+  const today = moment(Date.now()).format("YYYY-MM-DD");
 
-  // let sort = ''
+  let url = "";
+  let sort = "";
 
-  // if (category === 'popular') {
-  //   sort = "popularity.desc";
-  // }
-
-  let url;
-
-  //api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc'
-
-  if (category === "now_playing" && mediaType === "tv") {
-    url = `${baseUrl}/${mediaType}/on_the_air?api_key=${apiKey}&language=${language}&page=${page}`;
-  } else if (category === "upcoming" && mediaType === "tv") {
-    url = `${baseUrl}/${mediaType}/airing_today?api_key=${apiKey}&language=${language}&page=${page}`;
+  if (category === "popular") {
+    sort = "popularity.desc";
+  } else if (category === "now_playing") {
+    sort = `popularity.desc&with_release_type=2|3&region=US,IN&release_date.gte=${today}&release_date.lte=${today}`;
+  } else if (category === "upcoming") {
+    sort = `popularity.desc&with_release_type=2|3&region=US,IN&release_date.gte=${today}`;
   } else {
-    url = `${baseUrl}/${mediaType}/${category}?api_key=${apiKey}&language=${language}&page=${page}`;
+    sort = "vote_average.desc&without_genres=99,10755&vote_count.gte=200";
   }
+
+  if (
+    category !== "popular" &&
+    category !== "now_playing" &&
+    category !== "upcoming" &&
+    category !== "top_rated"
+  ) {
+    sort = `vote_count.desc&with_genres=${category}`;
+  }
+
+  url = `${baseUrl}/${mediaType}?api_key=${apiKey}&language=${language}S&page=1&sort_by=${sort}&page=${page}&include_adult=false&include_video=false`;
 
   try {
     const response = await fetch(url);

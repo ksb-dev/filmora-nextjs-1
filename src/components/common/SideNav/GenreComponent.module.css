@@ -24,10 +24,11 @@
   display: flex;
   flex-wrap: wrap;
 }
-.genre_options_div span {
+.genre_options_div a {
+  text-decoration: none;
   display: inline-block;
   padding: 0.25rem 0.5rem;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
   border-radius: 50px;
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -35,11 +36,12 @@
   font-size: 0.9rem;
   cursor: pointer;
   background: #fff;
+  color: #555;
   transition: filter 0.3s ease;
 }
-.genre_options_div span:last-child {
+.genre_options_div a:last-child {
   margin-right: 0;
 }
-.genre_options_div span:hover {
+.genre_options_div a:hover {
   filter: brightness(95%);
 }

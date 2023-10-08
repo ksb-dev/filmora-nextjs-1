@@ -19,28 +19,29 @@ interface Params {
   };
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  if (params.category === "top_rated")
-    return {
-      title: `Filmora | Top Rated  ${
-        params.media_type === "movie" ? "Movies" : " Tv Shows"
-      }`,
-    };
+const genresArray = new Map([
+  ["action", 28],
+  ["adventure", 12],
+  ["animation", 16],
+  ["comedy", 35],
+  ["crime", 80],
+  ["documentary", 99],
+  ["drama", 18],
+  ["family", 10751],
+  ["fantasy", 14],
+  ["history", 36],
+  ["horror", 27],
+  ["music", 10402],
+  ["mystery", 9648],
+  ["romance", 10749],
+  ["science_fiction", 878],
+  ["tv_movie", 10770],
+  ["thriller", 53],
+  ["war", 10752],
+  ["western", 37],
+]);
 
-  let category =
-    params.category.charAt(0).toUpperCase() + params.category.substring(1);
-
-  return {
-    title: `Filmora | ${category} ${
-      params.media_type === "movie" ? "Movies" : "Tv Shows"
-    }`,
-  };
-}
-
-export default async function Page({ params }: Params) {
-  const { media_type, category, page } = params;
-
-  // Assign Title
+const getTitle = (category: string, media_type: string) => {
   let title = "";
 
   if (category === "now_playing" && media_type === "movie") {
@@ -54,8 +55,34 @@ export default async function Page({ params }: Params) {
   } else {
     title = category.charAt(0).toUpperCase() + category.substring(1);
   }
+  return title;
+};
 
-  // Fetch Data
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { category, media_type } = params;
+  let title = getTitle(category, media_type);
+
+  return {
+    title: `Filmora | ${title} ${
+      params.media_type === "movie" ? "Movies" : "Tv Shows"
+    }`,
+  };
+}
+
+export default async function Page({ params }: Params) {
+  let { media_type, category, page } = params;
+
+  let title = getTitle(category, media_type);
+
+  if (
+    category !== "popular" &&
+    category !== "now_playing" &&
+    category !== "upcoming" &&
+    category !== "top_rated"
+  ) {
+    category = String(genresArray.get(category));
+  }
+
   const data = await getMoviesOrTv(category, page, media_type, title);
 
   return (
