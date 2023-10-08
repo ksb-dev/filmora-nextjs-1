@@ -16,7 +16,15 @@ export async function getMoviesOrTv(
   const baseUrl = "https://api.themoviedb.org/3";
   const language = "en-US";
 
+  // let sort = ''
+
+  // if (category === 'popular') {
+  //   sort = "popularity.desc";
+  // }
+
   let url;
+
+  //api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc'
 
   if (category === "now_playing" && mediaType === "tv") {
     url = `${baseUrl}/${mediaType}/on_the_air?api_key=${apiKey}&language=${language}&page=${page}`;
